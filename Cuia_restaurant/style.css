@@ -1,0 +1,468 @@
+*{
+    
+        font-family: "Lato", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: aliceblue;
+        padding: 0;
+        margin: 0;
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+    background-color: black;
+}
+
+/*---------------HERO/FIRST PAGE */ 
+
+header{
+    background-image:url(images/herobkg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    height: 768px;
+   
+
+}
+
+.hero_container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+
+a{
+    text-decoration: none;
+    text-align: center;
+    margin: 10px;
+    color: aliceblue;
+    
+}
+
+a:hover{
+   color: rgb(244, 150, 56);
+}
+
+.hero_containerdois {
+    width: 690px;
+    height: 381px;
+    border: 2px solid darkgoldenrod; /* Specify border style */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 55px;
+
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.50); /* Set background color with opacity */
+}
+
+.headlinetxt{
+    font-family: "Besley", serif;
+    font-size: 75px;
+
+}
+
+.herotxt{
+    
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+    font-style:normal
+}
+
+button{
+    height: 74px;
+    width: 292px;
+    border: 1px;
+    border-radius: 50px;
+    background-color:darkgoldenrod;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+}
+.buttontxt{
+    font-weight: bold;
+    font-size: 25px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: rgb(232, 155, 60); 
+}
+
+
+/*---------------------------ABOUT */ 
+
+/*.plantslice{
+    position: relative;
+    top: -50;
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+}*/
+
+.about{
+    background-color: rgba(28, 24, 25, 1);
+    height: 440px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.cuiasphotos{
+    /*margin-left: 400px;*/
+    margin-right: 20px
+}
+
+.about_paragraph{
+    text-align: justify;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.experience{
+    font-family: "Besley", serif;
+    font-size: 35px;
+    position: relative;
+    margin-left: 100px;
+    margin-bottom: -70px;
+  
+    
+    
+}
+ .amazon{
+    font-family: "Besley", serif;
+    color: rgba(185, 143, 57, 1);
+    font-style: italic;
+    font-size: 100px;
+    
+    margin-bottom: -60px;
+ }
+
+ em{
+    font-family: "Besley", serif;
+    color: rgba(185, 143, 57, 1);
+    font-size: 45px;
+    padding-top: -10px; 
+}
+
+
+/*about--plants*/
+.plantaum{
+    position: absolute;
+    width: 300px;
+    height: 300px ;
+    right:6px;
+    bottom:-190px;
+}
+
+.plantaumtwo{
+    position: absolute;
+    
+    height: 300px ;
+    left: 5vh;
+    top:-10vh;
+}
+
+/*---------------------------MENU */ 
+
+.menuoptions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.menutitle{
+    font-family: "Besley", serif;
+    font-size: 45px;
+    color: rgba(185, 143, 57, 1);
+    text-align: center;
+}
+
+
+
+/*appetizers-plants*/ 
+.appetizers{
+    position: relative;
+}
+.appetizerplants{
+    position: absolute;
+    left: 2vh;
+    top: 2vh;
+    z-index: -1;
+}
+
+/*plant-maincourse*/
+.maincourse{
+    position: relative;
+}
+
+.duoplant{
+    position: absolute
+    ;
+    right: 20vh;
+    bottom: 10px;
+
+}
+
+/*plant-desserts*/
+.desserts{
+    position: relative;
+}
+.plantdessert{
+    position: absolute;
+    left: 25vh;
+    top: 10vh;
+    z-index: 1;
+
+}
+
+/*plant-drink*/
+.drinkmenu{
+    position: relative;
+}
+
+.drinkplants{
+    position: absolute;
+    top: 10vh;
+    right: 25vh;
+}
+
+.linesmenu{
+    width: 219px;
+    border-top: 1px solid rgba(185, 143, 57, 1);
+}
+
+.lines{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+.appetizers, .maincourse, .desserts, .drinkmenu{
+    display: flex;
+
+    justify-content: center;
+    height: 600px;
+    padding-top: 50px;
+  
+}
+
+
+
+.maincourse, .drinkmenu {
+    background-color: rgba(185, 143, 57, 1);
+    padding-top: 70px;
+    flex-direction: row-reverse;
+}
+
+.appetizers, .desserts{
+    padding-top: 70px;
+}
+
+.menu_container{
+    padding: 10px;
+    margin-top: 20px;
+    
+    
+}
+
+.menutype{
+        font-family: "Lato", serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 60px;
+      }
+
+.menutypetwo{
+    font-family: "Lato", serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 60px;
+        text-align: right;
+}
+
+.menu_container{
+    height: 480px;
+    width: 479px;
+    border-radius: 68px;
+    background-color: rgba(185, 143, 57, 0.30);
+    backdrop-filter: blur(10px);
+    margin-right: 10px;
+}
+
+.menu_containertwo{
+    height: 480px;
+    width: 479px;
+    border-radius: 68px;
+    background-color: rgba(232, 229, 229, 0.1);
+    backdrop-filter: blur(15px);
+    margin-left: 20px;
+
+}
+
+
+.menu_list{
+    justify-content: baseline;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.menu_item{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.item_title{
+    font-family: "Lato", serif;
+    font-weight: 700;
+    font-style: italic;
+   font-size: 20px;
+}
+
+.item_description{
+    font-family: "Lato", serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.price{
+    font-family: "Lato", serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+
+
+/*------ contact -------------*/
+.contact{
+    height: 452px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px;
+    background-image: url(images/teatro.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+      
+        
+}
+
+.contactline{
+    border: 2px solid black;
+}
+.map {
+    width: 30%; /* Ensures the container takes full width of the page or section */
+    overflow: hidden; /* Hides any overflow to maintain the rounded corners */
+    border-radius: 55px; /* Sets the border radius */
+    margin-top: 70px;
+    height: 300px;
+   
+}
+
+.map iframe {
+    width: 100%; /* Makes iframe fill the container */
+    height: 343px; /* Adjust the height as needed */
+    border: none; /* Removes default border */
+}
+
+.contact_container{
+    background-color: rgba(68, 45, 45, 0.40);
+    margin: 50px;
+    width: 450px;
+    border-radius: 55px;
+    padding-top: 100px;
+     
+}
+
+.contact_part{
+    margin-top: -30px;
+}
+
+.contactus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contactfour{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.phonenumber{
+    text-align: center;
+}
+.emails{
+    text-align: center;
+}
+
+.phone{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.email{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.times{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/*------------footer */ 
+
+footer{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.footmenu{
+    font-size: 10px;
+}
