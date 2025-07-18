@@ -466,3 +466,127 @@ footer{
 .footmenu{
     font-size: 10px;
 }
+
+/* ========= MOBILE FIRST RESPONSIVE ENHANCEMENTS ========= */
+
+@media (max-width: 768px) {
+
+  .hero_container1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .hero_containerdois {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .headlinetxt {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .herotxt {
+    font-size: 18px;
+  }
+
+  .about {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .cuiasphotos, .plantaum, .plantaumtwo {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .experience {
+    font-size: 25px;
+    margin-left: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .amazon {
+    font-size: 60px;
+  }
+
+  .about_paragraph {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .menuoptions, .maincourse, .appetizers, .desserts, .drinkmenu {
+    flex-direction: column !important;
+    align-items: center;
+    height: auto;
+    padding: 30px 10px;
+    gap: 20px;
+  }
+
+  .menu_container, .menu_containertwo {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .menu_list {
+    padding: 10px;
+  }
+
+  .photo_container {
+    text-align: center;
+  }
+
+  .menutype, .menutypetwo {
+    font-size: 35px;
+  }
+
+  .contact {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .map {
+    width: 100%;
+    height: 250px;
+    border-radius: 25px;
+  }
+
+  .contact_container {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .footmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
