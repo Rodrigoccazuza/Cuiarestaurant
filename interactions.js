@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const revealTargets = [
     ['.about .cuiasphotos', 'reveal-left'],
-    ['.about > div', 'reveal-right'],
+    ['.about .subheadline', 'reveal-right'],
+    ['.about .about_paragraph', ''],
     ['.lines', ''],
     ['.appetizers .menu_container', 'reveal-left'],
     ['.appetizers .photo_container', 'reveal-right'],
@@ -14,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ['.drinkmenu .menu_containertwo', 'reveal-right'],
     ['.drinkmenu .photo_container', 'reveal-left'],
     ['.contact .map', 'reveal-left'],
-    ['.contact .contact_container', 'reveal-right']
+    ['.contact .contact_container', 'reveal-right'],
+    ['footer .footmenu', 'reveal-left'],
+    ['footer > img:first-of-type', ''],
+    ['footer > img:nth-of-type(2)', 'reveal-right']
   ];
 
   revealTargets.forEach(([selector, direction], index) => {
@@ -36,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
           instance.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14, rootMargin: '0px 0px -45px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px' });
+
     revealElements.forEach((element) => observer.observe(element));
   }
 
