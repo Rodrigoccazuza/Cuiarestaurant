@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="reset.css" type="text/css">
-  <link rel="stylesheet" href="style.css" type="text/css">
-  <link rel="stylesheet" href="interactions.css" type="text/css">
+  <meta name="description" content="Cuia Restaurant brings the flavors and hospitality of the Amazon to New York City.">
+  <meta name="theme-color" content="#100d0d">
+
+  <link rel="preload" href="images/herobkg.png" as="image" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="interactions.css">
+  <link rel="stylesheet" href="layout-fixes.css">
+  <link rel="stylesheet" href="menu-visibility-fixes.css">
+  <link rel="stylesheet" href="performance.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <title>Cuia Restaurant</title>
 </head>
 <body>
   <header>
     <div class="hero_container1">
-      <img src="images/logo.png" class="logo" alt="Cuia Restaurant logo">
+      <img src="images/logo.png" class="logo" alt="Cuia Restaurant logo" fetchpriority="high">
       <nav class="menu" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#menu">Menu</a>
         <a href="#reservation-modal" data-reservation-trigger>Reservations</a>
-        <a href="#contact">Contact</a>
       </nav>
-      <img src="images/socialicons.png" class="icons" height="40" alt="Social media icons">
+      <img src="images/socialicons.png" class="icons" height="40" alt="Cuia Restaurant social media">
     </div>
 
     <div class="hero_containerdois">
       <h1 class="headlinetxt">Taste the Exotic</h1>
       <p class="herotxt">Discover an immersive burst of Amazonian flavors, curated from the heart of the forest to the streets of New York City.</p>
       <button type="button" class="reservation-trigger" data-reservation-trigger>
-        <img src="images/phonvector.png" alt="">
+        <img src="images/phonvector.png" alt="" width="26" height="26">
         <span class="buttontxt">Make a Reservation</span>
       </button>
     </div>
@@ -37,7 +45,7 @@
 
   <main>
     <section class="about" id="about">
-      <img src="images/cuias.png" alt="Traditional Amazonian cuias" class="cuiasphotos">
+      <img src="images/cuias.png" alt="Traditional Amazonian cuias" class="cuiasphotos" loading="lazy" decoding="async">
       <div>
         <div class="subheadline">
           <h2 class="experience">Experience the</h2>
@@ -46,19 +54,19 @@
         </div>
         <p class="about_paragraph">Inspired by Manaus' vibrant food culture, we bring the exotic flavors, colors, and soul of the Amazon rainforest to you. Cuia celebrates the rich heritage of the Amazon with fresh ingredients that showcase the region's unique biodiversity and unforgettable flavors.</p>
       </div>
-      <img src="images/duasplantasdireita.png" class="plantaumtwo" alt="">
-      <img src="images/plantaum.png" class="plantaum" alt="">
+      <img src="images/duasplantasdireita.png" class="plantaumtwo" alt="" loading="lazy" decoding="async">
+      <img src="images/plantaum.png" class="plantaum" alt="" loading="lazy" decoding="async">
     </section>
 
-    <section class="menuoptions">
+    <section class="menuoptions" aria-labelledby="menu-title">
       <div class="lines">
         <hr class="linesmenu">
-        <h2 class="menutitle">Menu</h2>
+        <h2 class="menutitle" id="menu-title">Menu</h2>
         <hr class="linesmenu">
       </div>
 
       <section class="appetizers" id="menu">
-        <img src="images/duaspequenas.png" class="appetizerplants" alt="">
+        <img src="images/duaspequenas.png" class="appetizerplants" alt="" loading="lazy" decoding="async">
         <div class="menu_container">
           <div class="menu_list">
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Tacacá</h3><p class="item_description">A rich shrimp soup with jambu and tucupi, tangy and authentic.</p></div><p class="price">$15</p></div>
@@ -67,11 +75,11 @@
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Banana Cozida</h3><p class="item_description">Steamed Amazonian plantains, sweet, soft, and full of flavor.</p></div><p class="price">$8</p></div>
           </div>
         </div>
-        <div class="photo_container"><h3 class="menutype">Appetizers</h3><img src="images/tacaca.png" alt="Tacacá appetizer"></div>
+        <div class="photo_container"><h3 class="menutype">Appetizers</h3><img src="images/tacaca.png" alt="Tacacá appetizer" loading="lazy" decoding="async"></div>
       </section>
 
       <section class="maincourse">
-        <img src="images/duoplant.png" class="duoplant" alt="">
+        <img src="images/duoplant.png" class="duoplant" alt="" loading="lazy" decoding="async">
         <div class="menu_containertwo">
           <div class="menu_list">
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Tambaqui Assado</h3><p class="item_description">Whole roasted tambaqui fish with Amazonian spices, beans, rice, and farofa.</p></div><p class="price">$28</p></div>
@@ -80,11 +88,11 @@
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Bacalhau</h3><p class="item_description">Amazonian codfish seasoned with an earthy blend of herbs, rice, and farofa.</p></div><p class="price">$32</p></div>
           </div>
         </div>
-        <div class="photo_container"><h3 class="menutypetwo">Main Course</h3><img src="images/tambaqui.png" alt="Tambaqui main course"></div>
+        <div class="photo_container"><h3 class="menutypetwo">Main Course</h3><img src="images/tambaqui.png" alt="Tambaqui main course" loading="lazy" decoding="async"></div>
       </section>
 
       <section class="desserts">
-        <img src="images/duasplantasesquerdas.png" class="plantdessert" alt="">
+        <img src="images/duasplantasesquerdas.png" class="plantdessert" alt="" loading="lazy" decoding="async">
         <div class="menu_container">
           <div class="menu_list">
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Mousse de Cupuaçu</h3><p class="item_description">Creamy cupuaçu mousse, a tangy tropical delight.</p></div><p class="price">$10</p></div>
@@ -93,11 +101,11 @@
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Goiabada com Creme de Leite</h3><p class="item_description">Guava paste with rich cream, simple and iconic.</p></div><p class="price">$8</p></div>
           </div>
         </div>
-        <div class="photo_container"><h3 class="menutype">Desserts</h3><img src="images/cupuacu.png" alt="Cupuaçu dessert"></div>
+        <div class="photo_container"><h3 class="menutype">Desserts</h3><img src="images/cupuacu.png" alt="Cupuaçu dessert" loading="lazy" decoding="async"></div>
       </section>
 
       <section class="drinkmenu">
-        <img src="images/duasplantasdireita.png" class="drinkplants" alt="">
+        <img src="images/duasplantasdireita.png" class="drinkplants" alt="" loading="lazy" decoding="async">
         <div class="menu_containertwo">
           <div class="menu_list">
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Jamboom Cachaça</h3><p class="item_description">Amazonian sugarcane spirit with a rich, earthy finish.</p></div><p class="price">$15</p></div>
@@ -107,37 +115,48 @@
             <div class="menu_item"><div class="item_container"><h3 class="item_title">Tuchaua</h3><p class="item_description">A unique Amazonian fruit drink, full-bodied and aromatic.</p></div><p class="price">$8</p></div>
           </div>
         </div>
-        <div class="photo_container"><h3 class="menutypetwo">Drink Menu</h3><img src="images/jambu 1.png" alt="Amazonian drink"></div>
+        <div class="photo_container"><h3 class="menutypetwo">Drink Menu</h3><img src="images/jambu 1.png" alt="Amazonian drink" loading="lazy" decoding="async"></div>
       </section>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0564814364976!2d-122.42067968468108!3d37.77927627975866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f74e3d31b%3A0x4e9f7af8a6a3a44d!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1697034113955!5m2!1sen!2sus" width="100%" height="400" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Cuia Restaurant map"></iframe>
-      </div>
-      <div class="contact_container">
-        <div class="contactus">
-          <div class="contact_part">
-            <h4 class="contactfour">Contact Us:</h4><hr class="contactline">
-            <div class="phone"><img src="images/phonvector.png" class="icon_phone" alt=""><p>617-675-657</p></div>
-            <div class="email"><img src="images/emailvector.png" class="icon_phone" alt=""><p class="emailinfo">cuiarestaurant@info.com</p></div>
-          </div>
-          <div class="hours_part">
-            <div class="times"><img src="images/timevector.png" class="icon_phone" alt=""><h4 class="contactfour">Hours:</h4></div><hr class="contactline">
-            <p class="weekhours">Mon - Fri: 11AM - 10PM</p><p class="weekendhours">Sat - Sun: 10AM - 10PM</p>
-          </div>
-        </div>
-      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footmenu">
-      <a href="#contact">Contact</a><a href="#reservation-modal" data-reservation-trigger>Reservations</a><a href="#about">About</a><a href="#menu">Menu</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" class="footer-logo" alt="Cuia Restaurant logo" loading="lazy" decoding="async">
+        <p class="footer-eyebrow">Amazonian cuisine</p>
+        <h2>From the forest to your table.</h2>
+        <p class="footer-description">A warm, modern celebration of Manaus flavors, ingredients, and hospitality.</p>
+        <img src="images/socialicons.png" class="footer-social-icons" alt="Cuia Restaurant social media" loading="lazy" decoding="async">
+      </div>
+
+      <nav class="footer-column" aria-label="Footer navigation">
+        <p class="footer-heading">Explore</p>
+        <a href="#about">Our Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#reservation-modal" data-reservation-trigger>Reservations</a>
+      </nav>
+
+      <div class="footer-column">
+        <p class="footer-heading">Hours</p>
+        <p>Monday–Friday</p>
+        <strong>11 AM–10 PM</strong>
+        <p class="footer-spacer">Saturday–Sunday</p>
+        <strong>10 AM–10 PM</strong>
+      </div>
+
+      <div class="footer-column footer-contact-column">
+        <p class="footer-heading">Visit &amp; reserve</p>
+        <a href="tel:+1617675657">617-675-657</a>
+        <a href="mailto:cuiarestaurant@info.com">cuiarestaurant@info.com</a>
+        <button type="button" class="footer-reservation-button" data-reservation-trigger>Reserve a table</button>
+      </div>
     </div>
-    <img src="images/logo.png" width="40" height="100" alt="Cuia Restaurant logo">
-    <img src="images/socialicons.png" width="100" height="30" alt="Social media icons">
-    <p class="copyrights" style="font-size:10px">All Rights Reserved to Cuia 2024.</p>
+
+    <div class="footer-bottom">
+      <p>© 2026 Cuia Restaurant. All rights reserved.</p>
+      <a href="#top" class="footer-back-top" aria-label="Back to top">Back to top ↑</a>
+    </div>
   </footer>
 
   <div class="reservation-modal" id="reservation-modal" aria-hidden="true">
