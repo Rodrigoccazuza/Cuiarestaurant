@@ -1,0 +1,45 @@
+name: Lossless image optimization
+
+on:
+  push:
+    branches:
+      - agent/responsive-tablet-mobile
+    paths:
+      - "images/**"
+      - ".github/workflows/optimize-images.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/responsive-tablet-mobile
+
+      - name: Install lossless optimizers
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y optipng jpegoptim
+
+      - name: Optimize PNG and JPEG files without reducing quality
+        run: |
+          find images -type f -iname '*.png' -print0 | xargs -0 -r optipng -o2 -strip all -quiet
+          find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 | xargs -0 -r jpegoptim --strip-all --all-progressive --preserve
+
+      - name: Commit optimized assets
+        run: |
+          if git diff --quiet -- images; then
+            echo "Images are already optimized."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images
+          git commit -m "Losslessly optimize image assets"
+          git push
