@@ -1,0 +1,199 @@
+/* Final menu visibility and section sizing corrections. Loaded after all other styles. */
+
+/* Let every menu section grow with its full content. */
+.appetizers,
+.maincourse,
+.desserts,
+.drinkmenu {
+  width: 100% !important;
+  height: auto !important;
+  min-height: max-content !important;
+  padding-top: clamp(76px, 8vw, 112px) !important;
+  padding-bottom: clamp(76px, 8vw, 112px) !important;
+  overflow: hidden !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove every fixed-height or clipping rule from the menu cards. */
+.menu_container,
+.menu_containertwo {
+  width: min(50vw, 560px) !important;
+  max-width: 560px !important;
+  height: auto !important;
+  min-height: max-content !important;
+  max-height: none !important;
+  overflow: visible !important;
+  align-self: center !important;
+  flex: 0 1 560px !important;
+  box-sizing: border-box !important;
+}
+
+.menu_list {
+  width: 100% !important;
+  height: auto !important;
+  min-height: max-content !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: clamp(30px, 4vw, 50px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  gap: clamp(16px, 2vw, 24px) !important;
+  box-sizing: border-box !important;
+}
+
+.menu_item {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: max-content !important;
+  overflow: visible !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start !important;
+  gap: 8px clamp(14px, 2vw, 26px) !important;
+  margin: 0 !important;
+  padding: 12px 10px !important;
+  box-sizing: border-box !important;
+}
+
+.item_container {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.item_title {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  font-size: clamp(17px, 1.55vw, 21px) !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+.item_description {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 6px 0 0 !important;
+  font-size: clamp(13px, 1.15vw, 15px) !important;
+  line-height: 1.55 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+.price {
+  display: block !important;
+  align-self: start !important;
+  margin: 0 !important;
+  padding-top: 2px !important;
+  font-size: clamp(16px, 1.35vw, 19px) !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+/* Keep card content visible regardless of reveal-observer timing. */
+.menu_container.reveal-on-scroll,
+.menu_containertwo.reveal-on-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* The decorative plants remain behind the content. */
+.appetizerplants,
+.duoplant,
+.plantdessert,
+.drinkplants {
+  z-index: 0 !important;
+  opacity: 0.09 !important;
+  pointer-events: none !important;
+}
+
+.menu_container,
+.menu_containertwo,
+.photo_container {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 1100px) {
+  .appetizers,
+  .maincourse,
+  .desserts,
+  .drinkmenu {
+    min-height: max-content !important;
+    padding: 72px 28px !important;
+  }
+
+  .menu_container,
+  .menu_containertwo {
+    width: min(54vw, 560px) !important;
+    max-width: 560px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .appetizers,
+  .maincourse,
+  .desserts,
+  .drinkmenu {
+    height: auto !important;
+    min-height: max-content !important;
+    padding: 52px 16px 64px !important;
+    overflow: hidden !important;
+  }
+
+  .menu_container,
+  .menu_containertwo {
+    width: 100% !important;
+    max-width: 600px !important;
+    min-height: max-content !important;
+    overflow: visible !important;
+  }
+
+  .menu_list {
+    padding: clamp(24px, 6vw, 36px) !important;
+    gap: 16px !important;
+  }
+
+  .menu_item {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 8px 14px !important;
+    padding: 12px 4px !important;
+  }
+
+  .item_title {
+    font-size: clamp(17px, 4.8vw, 20px) !important;
+  }
+
+  .item_description {
+    font-size: clamp(13px, 3.8vw, 15px) !important;
+    line-height: 1.55 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .menu_item {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .price {
+    margin-top: 2px !important;
+    color: var(--cuia-gold-light) !important;
+  }
+}
