@@ -4,6 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
   finalLayoutStyles.href = 'layout-fixes.css';
   document.head.appendChild(finalLayoutStyles);
 
+  const menuVisibilityStyles = document.createElement('link');
+  menuVisibilityStyles.rel = 'stylesheet';
+  menuVisibilityStyles.href = 'menu-visibility-fixes.css';
+  document.head.appendChild(menuVisibilityStyles);
+
+  /* Remove the former standalone contact/map section and any navigation links
+     that pointed to it. Contact details remain available in the footer. */
+  document.querySelector('.contact')?.remove();
+  document.querySelectorAll('a[href="#contact"]').forEach((link) => link.remove());
+
   const footer = document.querySelector('footer');
   if (footer) {
     footer.className = 'site-footer';
@@ -21,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="footer-heading">Explore</p>
           <a href="#about">Our Story</a>
           <a href="#menu">Menu</a>
-          <a href="#contact">Contact</a>
           <a href="#reservation-modal" data-reservation-trigger>Reservations</a>
         </nav>
 
@@ -34,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="footer-column footer-contact-column">
-          <p class="footer-heading">Visit & reserve</p>
+          <p class="footer-heading">Reservations</p>
           <a href="tel:+1617675657">617-675-657</a>
           <a href="mailto:cuiarestaurant@info.com">cuiarestaurant@info.com</a>
           <button type="button" class="footer-reservation-button" data-reservation-trigger>Reserve a table</button>
@@ -50,21 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Menu cards are intentionally excluded from reveal opacity so their text is
+     always visible. Images and headings still receive the reveal treatment. */
   const revealTargets = [
     ['.about .cuiasphotos', 'reveal-left'],
     ['.about .subheadline', 'reveal-right'],
     ['.about .about_paragraph', 'reveal-right'],
     ['.lines', ''],
-    ['.appetizers .menu_container', 'reveal-left'],
     ['.appetizers .photo_container', 'reveal-right'],
-    ['.maincourse .menu_containertwo', 'reveal-right'],
     ['.maincourse .photo_container', 'reveal-left'],
-    ['.desserts .menu_container', 'reveal-left'],
     ['.desserts .photo_container', 'reveal-right'],
-    ['.drinkmenu .menu_containertwo', 'reveal-right'],
-    ['.drinkmenu .photo_container', 'reveal-left'],
-    ['.contact .map', 'reveal-left'],
-    ['.contact .contact_container', 'reveal-right']
+    ['.drinkmenu .photo_container', 'reveal-left']
   ];
 
   revealTargets.forEach(([selector, direction], index) => {
@@ -86,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
           instance.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14, rootMargin: '0px 0px -45px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px' });
     revealElements.forEach((element) => observer.observe(element));
   }
 
