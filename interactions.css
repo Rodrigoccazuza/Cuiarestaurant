@@ -1,0 +1,48 @@
+/* Interactive enhancements: scroll reveals, hover states, and reservation modal */
+:root{--cuia-gold:#b98f39;--cuia-gold-light:#e8a84f;--cuia-ink:#100d0d;--cuia-panel:#1c1819;--cuia-cream:#fff8eb;--cuia-border:rgba(185,143,57,.55);--cuia-shadow:0 20px 55px rgba(0,0,0,.34)}
+
+.reveal-on-scroll{opacity:0;transform:translate3d(0,42px,0);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+.reveal-on-scroll.reveal-left{transform:translate3d(-48px,0,0)}
+.reveal-on-scroll.reveal-right{transform:translate3d(48px,0,0)}
+.reveal-on-scroll.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.reveal-delay-1{transition-delay:.08s}.reveal-delay-2{transition-delay:.16s}.reveal-delay-3{transition-delay:.24s}
+
+.menu a,.footmenu a{position:relative;transition:color .25s ease,transform .25s ease}
+.menu a::after,.footmenu a::after{content:"";position:absolute;left:10%;right:10%;bottom:-5px;height:1px;background:var(--cuia-gold-light);transform:scaleX(0);transform-origin:center;transition:transform .25s ease}
+.menu a:hover,.footmenu a:hover{transform:translateY(-2px)}
+.menu a:hover::after,.footmenu a:hover::after{transform:scaleX(1)}
+
+button,.reservation-trigger{cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+button:hover,.reservation-trigger:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 14px 30px rgba(185,143,57,.35)}
+button:active,.reservation-trigger:active{transform:translateY(-1px) scale(.99)}
+
+.menu_container,.menu_containertwo,.contact_container,.map{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.menu_container:hover,.menu_containertwo:hover,.contact_container:hover,.map:hover{transform:translateY(-8px);box-shadow:var(--cuia-shadow)}
+.menu_item{padding:8px 10px;border-radius:14px;transition:background-color .25s ease,transform .25s ease}
+.menu_item:hover{background:rgba(255,255,255,.07);transform:translateX(6px)}
+.photo_container>img,.cuiasphotos{transition:transform .5s cubic-bezier(.22,1,.36,1),filter .5s ease}
+.photo_container:hover>img,.cuiasphotos:hover{transform:scale(1.04) rotate(-1deg);filter:drop-shadow(0 18px 24px rgba(0,0,0,.35))}
+
+body.modal-open{overflow:hidden}
+.reservation-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px;background:rgba(5,4,4,.78);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}
+.reservation-modal.is-open{opacity:1;visibility:visible}
+.reservation-dialog{width:min(760px,100%);max-height:min(90vh,850px);overflow:auto;position:relative;background:linear-gradient(145deg,#211a1b,#100d0d);border:1px solid var(--cuia-border);border-radius:30px;padding:34px;box-shadow:0 35px 90px rgba(0,0,0,.6);transform:translateY(28px) scale(.97);transition:transform .32s cubic-bezier(.22,1,.36,1)}
+.reservation-modal.is-open .reservation-dialog{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:16px;right:16px;width:44px!important;height:44px!important;min-height:44px!important;margin:0!important;padding:0!important;border-radius:50%;border:1px solid var(--cuia-border);background:rgba(255,255,255,.06);font-size:28px;line-height:1;color:#fff;box-shadow:none}
+.modal-close:hover{transform:rotate(8deg) scale(1.06);background:rgba(185,143,57,.28)}
+.reservation-kicker{color:var(--cuia-gold-light);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.reservation-title{font-family:"Besley",serif;font-size:clamp(34px,6vw,52px);line-height:1.05;margin:8px 55px 8px 0;color:#fff}
+.reservation-intro{color:rgba(255,255,255,.75);line-height:1.55;margin-bottom:24px}
+.reservation-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.form-field{display:flex;flex-direction:column;gap:7px}.form-field.full{grid-column:1/-1}
+.form-field label{font-size:14px;font-weight:700;color:var(--cuia-cream)}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.07);color:#fff;padding:13px 14px;font:inherit;outline:none;transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+.form-field select option{color:#111}.form-field textarea{min-height:105px;resize:vertical}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--cuia-gold-light);box-shadow:0 0 0 4px rgba(185,143,57,.16);background:rgba(255,255,255,.1)}
+.form-actions{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:4px}
+.form-note{max-width:360px;color:rgba(255,255,255,.62);font-size:12px;line-height:1.45}
+.reservation-submit{width:auto!important;min-width:220px;height:auto!important;min-height:58px!important;margin:0!important;padding:14px 22px!important;border:0;border-radius:999px;background:var(--cuia-gold);font-weight:800;font-size:17px;color:#fff}
+.form-status{grid-column:1/-1;min-height:22px;color:var(--cuia-gold-light);font-size:14px}
+
+@media(max-width:640px){.reservation-dialog{padding:28px 18px 22px;border-radius:22px}.reservation-form{grid-template-columns:1fr}.form-field.full,.form-actions,.form-status{grid-column:1}.form-actions{align-items:stretch;flex-direction:column}.reservation-submit{width:100%!important}.reservation-title{font-size:36px}.modal-close{top:10px;right:10px}}
+@media(prefers-reduced-motion:reduce){.reveal-on-scroll{opacity:1!important;transform:none!important;transition:none!important}.reservation-dialog,.reservation-modal,*{scroll-behavior:auto!important}}
