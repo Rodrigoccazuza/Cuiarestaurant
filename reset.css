@@ -1,0 +1,620 @@
+/* Cuia responsive foundation.
+   This file is already referenced before style.css in index.html.
+   Responsive declarations use !important where needed so they can safely
+   override the original desktop-only rules without changing the desktop design. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 1100px) {
+  header,
+  .contact {
+    background-attachment: scroll !important;
+  }
+
+  header {
+    height: auto !important;
+    min-height: 720px;
+    padding: 0 28px 56px;
+  }
+
+  .hero_container1 {
+    width: min(100%, 960px);
+    margin: 0 auto;
+    padding: 20px 0 30px;
+    justify-content: space-between !important;
+    gap: 24px;
+    font-size: 22px !important;
+  }
+
+  .hero_container1 .logo {
+    width: 76px;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .hero_container1 .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  .hero_container1 .menu a {
+    margin: 6px !important;
+    white-space: nowrap;
+  }
+
+  .hero_container1 .icons {
+    width: 96px;
+    height: auto !important;
+    flex: 0 0 auto;
+  }
+
+  .hero_containerdois {
+    width: min(100%, 680px) !important;
+    height: auto !important;
+    min-height: 360px;
+    padding: 38px !important;
+  }
+
+  .headlinetxt {
+    font-size: clamp(54px, 8vw, 72px) !important;
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .herotxt {
+    font-size: clamp(19px, 2.7vw, 24px) !important;
+    line-height: 1.45;
+  }
+
+  .about {
+    height: auto !important;
+    min-height: 440px;
+    padding: 64px 38px !important;
+    gap: 28px;
+  }
+
+  .about > div {
+    min-width: 0;
+  }
+
+  .cuiasphotos {
+    width: min(34vw, 300px) !important;
+    height: auto !important;
+    flex: 0 0 auto;
+  }
+
+  .experience {
+    margin-left: 0 !important;
+    margin-bottom: -42px !important;
+    font-size: clamp(28px, 4vw, 35px) !important;
+  }
+
+  .amazon {
+    font-size: clamp(70px, 10vw, 96px) !important;
+    line-height: 1;
+    margin-bottom: -38px !important;
+  }
+
+  .on,
+  .on em {
+    line-height: 1.1;
+  }
+
+  .about_paragraph {
+    max-width: 620px;
+    font-size: 17px !important;
+    line-height: 1.55;
+    text-align: left !important;
+  }
+
+  .about_paragraph br {
+    display: none;
+  }
+
+  .plantaum {
+    width: 220px !important;
+    height: auto !important;
+    right: -52px !important;
+    bottom: -130px !important;
+    opacity: 0.6;
+  }
+
+  .plantaumtwo {
+    width: 190px !important;
+    height: auto !important;
+    left: -35px !important;
+    top: -34px !important;
+    opacity: 0.55;
+  }
+
+  .lines {
+    padding: 24px 20px 0;
+    gap: 16px;
+  }
+
+  .linesmenu {
+    width: min(22vw, 180px) !important;
+  }
+
+  .appetizers,
+  .maincourse,
+  .desserts,
+  .drinkmenu {
+    height: auto !important;
+    min-height: 590px;
+    padding: 64px 32px !important;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .menu_container,
+  .menu_containertwo {
+    width: min(52vw, 520px) !important;
+    height: auto !important;
+    min-height: 480px;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 48px !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  .menu_list {
+    padding: 38px !important;
+  }
+
+  .menu_item {
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .item_container {
+    min-width: 0;
+  }
+
+  .price {
+    margin-left: 0 !important;
+    flex: 0 0 auto;
+  }
+
+  .photo_container {
+    width: min(40vw, 410px);
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .photo_container > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .menutype,
+  .menutypetwo {
+    font-size: clamp(42px, 6vw, 58px) !important;
+    line-height: 1.05;
+  }
+
+  .appetizerplants,
+  .duoplant,
+  .plantdessert,
+  .drinkplants {
+    max-width: 250px !important;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .contact {
+    height: auto !important;
+    min-height: 500px;
+    padding: 52px 32px !important;
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .map {
+    width: min(48%, 520px) !important;
+    height: auto !important;
+    min-height: 330px;
+    margin: 0 !important;
+  }
+
+  .map iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 330px;
+  }
+
+  .contact_container {
+    width: min(48%, 470px) !important;
+    margin: 0 !important;
+    padding: 54px 28px 36px !important;
+  }
+
+  .contactfour {
+    font-size: clamp(28px, 4vw, 35px) !important;
+  }
+
+  .emailinfo,
+  .weekhours,
+  .weekendhours {
+    overflow-wrap: anywhere;
+  }
+
+  footer {
+    padding: 18px 24px;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    min-height: 100svh;
+    padding: 0 16px 38px !important;
+    background-position: center center !important;
+  }
+
+  .hero_container1 {
+    width: 100% !important;
+    padding: 16px 0 20px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    font-size: 17px !important;
+  }
+
+  .hero_container1 .logo {
+    width: 62px !important;
+  }
+
+  .hero_container1 .menu {
+    width: min(100%, 390px);
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px !important;
+  }
+
+  .hero_container1 .menu a {
+    min-height: 40px;
+    margin: 0 !important;
+    padding: 9px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(185, 143, 57, 0.55);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.36);
+  }
+
+  .hero_container1 .icons {
+    width: 88px !important;
+  }
+
+  .hero_containerdois {
+    width: 100% !important;
+    min-height: 0 !important;
+    margin-top: 6px !important;
+    padding: 30px 20px !important;
+    border-radius: 30px !important;
+  }
+
+  .headlinetxt {
+    font-size: clamp(42px, 13vw, 62px) !important;
+    line-height: 0.98;
+  }
+
+  .herotxt {
+    margin-top: 16px;
+    font-size: clamp(16px, 4.8vw, 19px) !important;
+    line-height: 1.5;
+  }
+
+  button {
+    width: min(100%, 280px) !important;
+    min-height: 58px;
+    height: auto !important;
+    padding: 12px 18px;
+  }
+
+  button img {
+    width: 24px;
+    height: auto;
+  }
+
+  .buttontxt {
+    font-size: 19px !important;
+  }
+
+  .about {
+    min-height: 0;
+    flex-direction: column !important;
+    padding: 52px 20px !important;
+    gap: 22px !important;
+    text-align: center !important;
+  }
+
+  .cuiasphotos {
+    width: min(72vw, 250px) !important;
+    margin: 0 auto !important;
+  }
+
+  .subheadline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience {
+    margin: 0 0 -16px !important;
+    font-size: 27px !important;
+    line-height: 1.1;
+  }
+
+  .amazon {
+    margin: 0 0 -8px !important;
+    font-size: clamp(58px, 19vw, 82px) !important;
+    line-height: 1;
+  }
+
+  .on {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .on em,
+  em {
+    font-size: clamp(34px, 10vw, 44px) !important;
+  }
+
+  .about_paragraph {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.65;
+    text-align: left !important;
+  }
+
+  .plantaum,
+  .plantaumtwo,
+  .appetizerplants,
+  .duoplant,
+  .plantdessert,
+  .drinkplants {
+    display: none !important;
+  }
+
+  .lines {
+    padding: 26px 16px 4px;
+    gap: 10px;
+  }
+
+  .linesmenu {
+    width: min(24vw, 90px) !important;
+  }
+
+  .menutitle {
+    font-size: 38px !important;
+  }
+
+  .appetizers,
+  .maincourse,
+  .desserts,
+  .drinkmenu {
+    min-height: 0 !important;
+    flex-direction: column !important;
+    padding: 42px 16px 52px !important;
+    gap: 24px !important;
+  }
+
+  .photo_container {
+    width: 100% !important;
+    max-width: 560px;
+    order: -1;
+    text-align: center;
+  }
+
+  .photo_container > img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+  }
+
+  .menutype,
+  .menutypetwo {
+    margin-bottom: 16px;
+    font-size: clamp(38px, 11vw, 50px) !important;
+    text-align: center !important;
+  }
+
+  .menu_container,
+  .menu_containertwo {
+    width: 100% !important;
+    max-width: 560px;
+    min-height: 0 !important;
+    border-radius: 30px !important;
+  }
+
+  .menu_list {
+    padding: 28px 22px !important;
+  }
+
+  .menu_item {
+    margin-bottom: 18px !important;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .item_title {
+    font-size: 19px !important;
+    line-height: 1.2;
+  }
+
+  .item_description {
+    margin-top: 4px;
+    font-size: 15px !important;
+    line-height: 1.45;
+  }
+
+  .price {
+    padding-top: 2px;
+    font-size: 17px !important;
+  }
+
+  .contact {
+    min-height: 0;
+    flex-direction: column !important;
+    padding: 38px 16px !important;
+    gap: 20px !important;
+  }
+
+  .map,
+  .contact_container {
+    width: 100% !important;
+    max-width: 620px;
+    margin: 0 auto !important;
+  }
+
+  .map {
+    min-height: 270px;
+    border-radius: 28px !important;
+  }
+
+  .map iframe {
+    min-height: 270px;
+  }
+
+  .contact_container {
+    padding: 42px 20px 32px !important;
+    border-radius: 28px !important;
+  }
+
+  .contact_part {
+    margin-top: 0 !important;
+  }
+
+  .contactfour {
+    font-size: 28px !important;
+  }
+
+  .phone,
+  .email,
+  .times {
+    justify-content: center !important;
+    gap: 10px;
+  }
+
+  footer {
+    height: auto !important;
+    flex-direction: column !important;
+    padding: 28px 16px !important;
+    gap: 14px !important;
+  }
+
+  .footmenu {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px !important;
+    font-size: 14px !important;
+  }
+
+  .footmenu a {
+    margin: 0 !important;
+    padding: 8px;
+  }
+
+  footer > img:first-of-type {
+    width: 38px !important;
+    height: auto !important;
+  }
+
+  footer > img:nth-of-type(2) {
+    width: 96px !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding-inline: 12px !important;
+  }
+
+  .hero_containerdois {
+    padding: 26px 16px !important;
+  }
+
+  .headlinetxt {
+    font-size: clamp(40px, 14vw, 54px) !important;
+  }
+
+  .menu_list {
+    padding: 24px 17px !important;
+  }
+
+  .menu_item {
+    gap: 10px;
+  }
+
+  .item_title {
+    font-size: 18px !important;
+  }
+
+  .item_description {
+    font-size: 14px !important;
+  }
+
+  .price {
+    font-size: 16px !important;
+  }
+
+  .contactfour {
+    font-size: 25px !important;
+  }
+
+  .emailinfo,
+  .weekhours,
+  .weekendhours {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
