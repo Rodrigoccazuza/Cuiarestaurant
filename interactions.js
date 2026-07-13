@@ -1,10 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const finalLayoutStyles = document.createElement('link');
+  finalLayoutStyles.rel = 'stylesheet';
+  finalLayoutStyles.href = 'layout-fixes.css';
+  document.head.appendChild(finalLayoutStyles);
+
+  const footer = document.querySelector('footer');
+  if (footer) {
+    footer.className = 'site-footer';
+    footer.innerHTML = `
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo.png" class="footer-logo" alt="Cuia Restaurant logo">
+          <p class="footer-eyebrow">Amazonian cuisine</p>
+          <h2>From the forest to your table.</h2>
+          <p class="footer-description">A warm, modern celebration of Manaus flavors, ingredients, and hospitality.</p>
+          <img src="images/socialicons.png" class="footer-social-icons" alt="Cuia Restaurant social media">
+        </div>
+
+        <nav class="footer-column" aria-label="Footer navigation">
+          <p class="footer-heading">Explore</p>
+          <a href="#about">Our Story</a>
+          <a href="#menu">Menu</a>
+          <a href="#contact">Contact</a>
+          <a href="#reservation-modal" data-reservation-trigger>Reservations</a>
+        </nav>
+
+        <div class="footer-column">
+          <p class="footer-heading">Hours</p>
+          <p>Monday–Friday</p>
+          <strong>11 AM–10 PM</strong>
+          <p class="footer-spacer">Saturday–Sunday</p>
+          <strong>10 AM–10 PM</strong>
+        </div>
+
+        <div class="footer-column footer-contact-column">
+          <p class="footer-heading">Visit & reserve</p>
+          <a href="tel:+1617675657">617-675-657</a>
+          <a href="mailto:cuiarestaurant@info.com">cuiarestaurant@info.com</a>
+          <button type="button" class="footer-reservation-button" data-reservation-trigger>Reserve a table</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© ${new Date().getFullYear()} Cuia Restaurant. All rights reserved.</p>
+        <a href="#top" class="footer-back-top" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    `;
+  }
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const revealTargets = [
     ['.about .cuiasphotos', 'reveal-left'],
     ['.about .subheadline', 'reveal-right'],
-    ['.about .about_paragraph', ''],
+    ['.about .about_paragraph', 'reveal-right'],
     ['.lines', ''],
     ['.appetizers .menu_container', 'reveal-left'],
     ['.appetizers .photo_container', 'reveal-right'],
@@ -15,10 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ['.drinkmenu .menu_containertwo', 'reveal-right'],
     ['.drinkmenu .photo_container', 'reveal-left'],
     ['.contact .map', 'reveal-left'],
-    ['.contact .contact_container', 'reveal-right'],
-    ['footer .footmenu', 'reveal-left'],
-    ['footer > img:first-of-type', ''],
-    ['footer > img:nth-of-type(2)', 'reveal-right']
+    ['.contact .contact_container', 'reveal-right']
   ];
 
   revealTargets.forEach(([selector, direction], index) => {
@@ -40,8 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
           instance.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -35px' });
-
+    }, { threshold: 0.14, rootMargin: '0px 0px -45px' });
     revealElements.forEach((element) => observer.observe(element));
   }
 
